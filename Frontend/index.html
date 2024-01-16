@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Titanic Survival Prediction</title>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Titanic Survival Prediction</h1>
+    <form id="titanicForm">
+      <label for="pclass">Passenger Class (1st, 2nd, 3rd):</label>
+      <input type="text" id="pclass" name="pclass" required>
+
+      <label for="sex">Sex:</label>
+      <select id="sex" name="sex" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" required>
+
+      <label for="sibsp">Number of Siblings/Spouses Aboard:</label>
+      <input type="text" id="sibsp" name="sibsp" required>
+
+      <label for="parch">Number of Parents/Children Aboard:</label>
+      <input type="text" id="parch" name="parch" required>
+
+      <label for="embarked">Embarked:</label>
+      <select id="embarked" name="embarked" required>
+        <option value="S">Southamption(S)</option>
+        <option value="C">Cherbourg(C)</option>
+        <option value="Q">Queenstown(Q)</option>
+      </select>
+
+      <button type="button" onclick="predictSurvival()">Predict</button>
+    </form>
+
+    <div id="predictionResult"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
