@@ -5,21 +5,19 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the pickled model
-with open('your_model.pkl', 'rb') as model_file:
+with open('titanic_model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Get input data from the request
-    data = request.get_json()
 
     # Extract features from the input data
-    pclass = data['Pclass']
-    sex = data['Sex']
-    age = data['Age']
-    sibsp = data['SibSp']
-    parch = data['Parch']
-    embarked = data['Embarked']
+    pclass = float(request.form['pclass'])
+    sex = request.form['sex']
+    age = float(request.form['age'])
+    sibsp = float(request.form['sibsp'])
+    parch = float(request.form['parch'])
+    embarked = request.form['embarked']
 
     # Perform necessary mappings and conversions
     sex_mapping = {'male': 0, 'female': 1}
